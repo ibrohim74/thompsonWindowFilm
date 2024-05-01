@@ -1,0 +1,128 @@
+.navbar {
+    width: 90%;
+    height: 10vh;
+    margin-top: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar,
+.nav_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #000;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, .8);
+}
+
+.brand .brand_text {
+    color: #fff;
+}
+
+.nav_item {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.nav-item .nav_link {
+    color: #ffffffcc;
+}
+
+.search input {
+    border: 1px solid #333;
+    color: #ffffffcc;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    background: transparent;
+}
+
+.app_bar_home {
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 1px #fff solid;
+    background: #292D32;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.lang_dropdown {
+    width: 100px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    display: flex;
+}
+
+.lang_dropdown option {
+    background: black;
+}
+
+.menu_app {
+    width: 100%;
+    position: fixed;
+    background: #292D32;
+    height: 100vh;
+    transition: 2s;
+    z-index: 99;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_app_item {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    margin-left: 10px;
+    display: block;
+}
+.menu_app_item svg{
+    width: 25px;
+    height: 25px;
+}
+.menu_app_item a {
+    color: white;
+    font-size: 30px;
+}
+
+.openProductList {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 10px 60px;
+    height: 100px;
+
+}
+.openProductList a{
+    margin: 5px 0;
+    color: white;
+    font-size: 25px;
+}
