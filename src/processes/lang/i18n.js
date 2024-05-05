@@ -13,17 +13,27 @@ i18n
     resources: {
       en: {
         translation:{
-            home:"home"
+            title_bronPlyonka:'Armored film',
+            title_tanirovka:'Armored film',
+            more:'view',
+            view_all : "view all"
         }
       },
       uz: {
         translation:{
-            home:"uy"
+            title_bronPlyonka:'Zirhli film',
+            title_tanirovka:'Tanirovka',
+            more:"ko'rinish",
+            view_all : "hammasini ko'rish"
+
         }
       },
       ru: {
         translation:{
-            home:"dom"
+            title_bronPlyonka:'Бронепленка',
+            title_tanirovka:'танировка',
+            more:"вид",
+            view_all : "посмотреть все"
         }
       },
     },

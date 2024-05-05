@@ -15,5 +15,5 @@ export const Icon = {
     ENG,
     RU,
     DownArrow,
-    UpArrow
+    UpArrow,
 }

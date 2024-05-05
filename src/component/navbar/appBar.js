@@ -35,12 +35,12 @@ const BottomAppBar = ({onlyIcon = true}) => {
                             items: languages,
                             onClick: handleLanguageChange,
                         }}
-                        style={{zIndex: 9999}}
+                        style={{zIndex: 9999 , cursor:"pointer"}}
                     >
                         <a onClick={(e) => e.preventDefault()}>
                             <Space>
                                 {onlyIcon ? (
-                                    <>{selectedLanguage.icon}</>
+                                    <span style={{ cursor:"pointer"}}>{selectedLanguage.icon}</span>
                                 ) : (
                                     <>
                                         {selectedLanguage.icon} {selectedLanguage.label} <DownOutlined/>
