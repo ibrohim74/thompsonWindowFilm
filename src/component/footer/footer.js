@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './footer.css'
 
 const Footer = () => {
+    const [initialState , setInitialState] = useState()
     return (
         <div>
             <footer className="footer-section">
@@ -40,16 +41,16 @@ const Footer = () => {
                     <div className="footer-content pt-5 pb-5">
                         <div className="row">
                             <div className="col-xl-4 col-lg-4 mb-50">
-                                <div className="footer-widget" >
+                                <div className="footer-widget">
                                     <div className="footer-logo">
 
                                     </div>
-                                    <div className="footer-text" style={{marginBottom:'30px'}}>
+                                    <div className="footer-text" style={{marginBottom: '30px'}}>
 
                                         <iframe
-                                            style={{border:"none"}}
+                                            style={{border: "none"}}
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11991.902464338094!2d69.22815304999999!3d41.28763515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a4ea6b86e67%3A0x91ed3e9e44b3b0ab!2z0J3QvtCy0LfQsA!5e0!3m2!1sru!2s!4v1714861645524!5m2!1sru!2s"
-                                            width="100%" height="450"  allowFullScreen="" loading="lazy"
+                                            width="100%" height="450" allowFullScreen="" loading="lazy"
                                             referrerPolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                     <div className="footer-social-icon">
@@ -85,11 +86,31 @@ const Footer = () => {
                                         <h3>Subscribe</h3>
                                     </div>
                                     <div className="footer-text mb-25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aspernatur aut culpa cupiditate id illo ipsam ipsum molestiae mollitia!</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+                                            accusantium aspernatur aut culpa cupiditate id illo ipsam ipsum molestiae
+                                            mollitia!</p>
                                     </div>
                                     <div className="subscribe-form">
                                         <form action="#">
-                                            <input type="tell" placeholder="Tell number"/>
+                                            <input type="tell" placeholder="Tell number"
+                                                   value={initialState?.contacts}
+                                                   onChange={e => {
+                                                       const formattedValue = e.target.value.replace(/\D/g, ''); // faqat raqamlarni qabul qilish
+                                                       let formattedNumber = '+998';
+                                                       if (formattedValue.length > 3) {
+                                                           formattedNumber += ' ' + formattedValue.substring(3, 5);
+                                                       }
+                                                       if (formattedValue.length > 5) {
+                                                           formattedNumber += ' ' + formattedValue.substring(5, 8);
+                                                       }
+                                                       if (formattedValue.length > 8) {
+                                                           formattedNumber += ' ' + formattedValue.substring(8, 10);
+                                                       }
+                                                       if (formattedValue.length > 10) {
+                                                           formattedNumber += ' ' + formattedValue.substring(10, 12);
+                                                       }
+                                                       setInitialState({...initialState, contacts: formattedNumber});
+                                                   }}/>
                                             <button><i className="fab fa-telegram-plane"></i></button>
                                         </form>
                                     </div>

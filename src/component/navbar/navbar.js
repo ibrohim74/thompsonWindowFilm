@@ -7,33 +7,36 @@ import {Dropdown, Space} from "antd";
 import {languages} from "../../processes/lang/langs";
 import {DownOutlined} from "@ant-design/icons";
 import {useLanguage} from "../../processes/lang/LangContext";
-const Navbar = ({onlyIcon = true}) => {
+import {Link, useNavigate} from "react-router-dom";
+import {HOME} from "../../processes/const";
+const Navbar = ({onlyIcon = true  , navStyle} ) => {
     const mediaQuery = useMediaQuery('(max-width:750px)');
     const {handleLanguageChange, selectedLanguage} = useLanguage();
+    const navigate = useNavigate()
     return (
         <div className={'container'}>
             {mediaQuery ? <BottomAppBar/> :
-                (<nav className={style.navbar}>
-                    <div className={style.brand}>
-                        <p className={style.brand_text}>
+                (<nav className={style.navbar} style={navStyle}>
+                    <div className={style.brand} style={{cursor:"pointer"}}>
+                        <p className={style.brand_text} onClick={()=>navigate(HOME)}>
                             <img src={logo} alt="logo"/>
                         </p>
                     </div>
                     <ul className={style.nav_items}>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Home</a>
+                            <Link to={HOME} className="nav-link">Home</Link>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Services</a>
+                            <a href="#" className="nav-link">Bron Plyonka</a>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Products</a>
+                            <a href="#" className="nav-link">Tanirovka</a>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Help</a>
+                            <a href="#" className="nav-link">Bron Plyonka 2</a>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Contact</a>
+                            <a href="#" className="nav-link">Tanirovka 2</a>
                         </li>
                         <li>
                             <Dropdown

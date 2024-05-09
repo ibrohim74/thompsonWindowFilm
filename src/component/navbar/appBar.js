@@ -18,14 +18,18 @@ import HomeIcon from '@mui/icons-material/Home';
 import {useLanguage} from "../../processes/lang/LangContext";
 import {languages} from '../../processes/lang/langs'
 import i18n from "i18next";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import {Icon} from "../../assets/icons/icon";
+import Footer from "../footer/footer";
 
 const BottomAppBar = ({onlyIcon = true}) => {
     const [appMenu, setAppMenu] = useState(false)
     const [openProduct, setOpenProduct] = useState(false)
 
     const {handleLanguageChange, selectedLanguage} = useLanguage();
+    const paragraphRef = useRef(null);
+
+
     return (
         <>
             <AppBar position="fixed" sx={{top: 'auto', bottom: 0, background: "#292D32"}}>
@@ -35,12 +39,12 @@ const BottomAppBar = ({onlyIcon = true}) => {
                             items: languages,
                             onClick: handleLanguageChange,
                         }}
-                        style={{zIndex: 9999 , cursor:"pointer"}}
+                        style={{zIndex: 9999, cursor: "pointer"}}
                     >
                         <a onClick={(e) => e.preventDefault()}>
                             <Space>
                                 {onlyIcon ? (
-                                    <span style={{ cursor:"pointer"}}>{selectedLanguage.icon}</span>
+                                    <span style={{cursor: "pointer"}}>{selectedLanguage.icon}</span>
                                 ) : (
                                     <>
                                         {selectedLanguage.icon} {selectedLanguage.label} <DownOutlined/>
@@ -52,7 +56,12 @@ const BottomAppBar = ({onlyIcon = true}) => {
 
 
                     <div className={style?.app_bar_home}>
-                        <Link to={HOME} style={{color: "white"}}>
+                        <Link to={HOME } style={{color: "white"}}
+                              onClick={() => window.scrollTo({
+                                  top: 0,
+                                  behavior: "smooth"
+                              })}
+                        >
                             <HomeIcon/>
                         </Link>
                     </div>
@@ -64,18 +73,59 @@ const BottomAppBar = ({onlyIcon = true}) => {
             </AppBar>
 
             <div className={style.menu_app} style={appMenu ? {right: '0'} : {right: '-100%'}}>
-                <div className={style.menu_app_item} onClick={() => setOpenProduct(!openProduct)}>
-                    <h1>product {openProduct ? <Icon.UpArrow/> : <Icon.DownArrow/>}</h1>
-
-
-                </div>
-                {openProduct && (<div className={style.openProductList}>
-                <Link to={PRODUCT}>Product 1</Link>
-                <Link to={PRODUCT}>Product 2</Link>
-                <Link to={PRODUCT}>Product 3</Link>
-            </div>)}
                 <div className={style.menu_app_item}>
-                    <h1>qweqwe</h1>
+                    <Link to={PRODUCT.replace(':category','BronPlyonka')}
+                          onClick={() => {
+                              window.scrollTo({
+                                  top: 0,
+                                  behavior: "smooth"
+                              })
+                          setAppMenu(false)
+                          }
+                    }
+                    >Bron Plyonka</Link>
+                </div>
+
+                <div className={style.menu_app_item}>
+                    <Link to={PRODUCT.replace(':category','Tanirovka')}
+                          onClick={() => {
+                              window.scrollTo({
+                                  top: 0,
+                                  behavior: "smooth"
+                              });
+                                  setAppMenu(false)
+                          }}
+                    >Tanirovka</Link>
+                </div>
+                <div className={style.menu_app_item}
+                     onClick={() => {
+                         window.scrollTo({
+                             top: 0,
+                             behavior: "smooth"
+                         });
+                         setAppMenu(false)
+                     }}
+                >
+                    <Link to={PRODUCT.replace(':category','BronPlyonka2')}
+                          onClick={() => {
+                              window.scrollTo({
+                                  top: 0,
+                                  behavior: "smooth"
+                              });
+                              setAppMenu(false)
+                          }}
+                    >Bron Plyonka2</Link>
+                </div>
+                <div className={style.menu_app_item}
+                     onClick={() => {
+                         window.scrollTo({
+                             top: 0,
+                             behavior: "smooth"
+                         });
+                         setAppMenu(false)
+                     }}
+                >
+                    <Link to={PRODUCT.replace(':category','Tanirovka2')}>Tanirovka2</Link>
                 </div>
             </div>
         </>

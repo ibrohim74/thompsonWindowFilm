@@ -5,16 +5,18 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import {product} from "../../db/db";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import {ITEM_PRODUCT} from "../../processes/const";
+import {ITEM_PRODUCT, PRODUCT} from "../../processes/const";
+import Navbar from "../../component/navbar/navbar";
 
 const Home = () => {
     const {t} = useTranslation()
     const mediaQuery = useMediaQuery('(max-width:750px)');
     const langStorage = window.localStorage.getItem('i18nextLng')
-    const navigate =useNavigate()
+    const navigate = useNavigate()
     return (
         <div className={style.home_content}>
-            <div className={style.header}>
+            <Navbar/>
+            <div className={style.header} id='header'>
                 <video src={require("../../assets/videos/bg.mp4")} autoPlay muted loop></video>
                 <div className={style.logo_text}>
                     <img src={require("../../assets/img/logoTextWhite.png")}
@@ -33,13 +35,13 @@ const Home = () => {
                             console.log(item);
                             return (
                                 <div className={style.home_product_category_product} key={index}
-                                    onClick={()=>navigate(ITEM_PRODUCT.replace(':id' , item.id))}
+                                     onClick={() => navigate(ITEM_PRODUCT.replace(':id', item.id).replace(':category', 'BronPlyonka'))}
                                 >
                                     <div className={style.home_product_category_product_top}>
                                         <img src={item.title_img} alt=""/>
                                     </div>
                                     <div className={style.home_product_category_product_body}>
-                                        <div style={{padding:"15px 10px"}}>
+                                        <div style={{padding: "15px 10px"}}>
                                             {langStorage === 'en' && <h1>{item.title_en}</h1>}
                                             {langStorage === 'uz' && <h1>{item.title_uz}</h1>}
                                             {langStorage === 'ru' && <h1>{item.title_ru}</h1>}
@@ -62,10 +64,11 @@ const Home = () => {
 
 
                     </div>
-                    <div className={style.home_product_cat_btn}>
+                    <div className={style.home_product_cat_btn}
+                         onClick={() => navigate(PRODUCT.replace(':category', 'BronPlyonka'))}
+                    >
                         {t('view_all')}
                     </div>
-
 
 
                     <h1 className={style.home_product_category_title}>
@@ -77,12 +80,13 @@ const Home = () => {
                             console.log(item);
                             return (
                                 <div className={style.home_product_category_product}
-                                     onClick={()=>navigate(ITEM_PRODUCT.replace(':id' , item.id))}>
+                                     onClick={() => navigate(ITEM_PRODUCT.replace(':id', item.id).replace(':category', 'Tanirovka'))}
+                                >
                                     <div className={style.home_product_category_product_top}>
                                         <img src={item.title_img} alt=""/>
                                     </div>
                                     <div className={style.home_product_category_product_body}>
-                                        <div style={{padding:"15px 10px"}}>
+                                        <div style={{padding: "15px 10px"}}>
                                             {langStorage === 'en' && <h1>{item.title_en}</h1>}
                                             {langStorage === 'uz' && <h1>{item.title_uz}</h1>}
                                             {langStorage === 'ru' && <h1>{item.title_ru}</h1>}
@@ -105,10 +109,12 @@ const Home = () => {
 
 
                     </div>
-                    <div className={style.home_product_cat_btn}>
+                    <div className={style.home_product_cat_btn}
+                         onClick={() => navigate(PRODUCT.replace(':category', 'Tanirovka'))}
+
+                    >
                         {t('view_all')}
                     </div>
-
 
 
                     <h1 className={style.home_product_category_title}>
@@ -120,12 +126,12 @@ const Home = () => {
                             console.log(item);
                             return (
                                 <div className={style.home_product_category_product}
-                                     onClick={()=>navigate(ITEM_PRODUCT.replace(':id' , item.id))}>
+                                     onClick={() => navigate(ITEM_PRODUCT.replace(':id', item.id).replace(':category', 'BronPlyonka2'))}>
                                     <div className={style.home_product_category_product_top}>
                                         <img src={item.title_img} alt=""/>
                                     </div>
                                     <div className={style.home_product_category_product_body}>
-                                        <div style={{padding:"15px 10px"}}>
+                                        <div style={{padding: "15px 10px"}}>
                                             {langStorage === 'en' && <h1>{item.title_en}</h1>}
                                             {langStorage === 'uz' && <h1>{item.title_uz}</h1>}
                                             {langStorage === 'ru' && <h1>{item.title_ru}</h1>}
@@ -148,10 +154,11 @@ const Home = () => {
 
 
                     </div>
-                    <div className={style.home_product_cat_btn}>
+                    <div className={style.home_product_cat_btn}
+                         onClick={() => navigate(PRODUCT.replace(':category', 'BronPlyonka2'))}
+                    >
                         {t('view_all')}
                     </div>
-
 
 
                     <h1 className={style.home_product_category_title}>
@@ -163,12 +170,12 @@ const Home = () => {
                             console.log(item);
                             return (
                                 <div className={style.home_product_category_product}
-                                     onClick={()=>navigate(ITEM_PRODUCT.replace(':id' , item.id))}>
+                                     onClick={() => navigate(ITEM_PRODUCT.replace(':id', item.id).replace(':category', 'Tanirovka2'))}>
                                     <div className={style.home_product_category_product_top}>
                                         <img src={item.title_img} alt=""/>
                                     </div>
                                     <div className={style.home_product_category_product_body}>
-                                        <div style={{padding:"15px 10px"}}>
+                                        <div style={{padding: "15px 10px"}}>
                                             {langStorage === 'en' && <h1>{item.title_en}</h1>}
                                             {langStorage === 'uz' && <h1>{item.title_uz}</h1>}
                                             {langStorage === 'ru' && <h1>{item.title_ru}</h1>}
@@ -191,7 +198,9 @@ const Home = () => {
 
 
                     </div>
-                    <div className={style.home_product_cat_btn}>
+                    <div className={style.home_product_cat_btn}
+                         onClick={() => navigate(PRODUCT.replace(':category', 'Tanirovka2'))}
+                    >
                         {t('view_all')}
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import Product from "../pages/product/product";
 import ItemProduct from "../pages/itemProduct/itemProduct";
 
 export const HOME = '/'
-export const PRODUCT = '/product'
-export const ITEM_PRODUCT = '/product/:id'
+export const PRODUCT = '/product/:category'
+export const ITEM_PRODUCT = '/product/:category/:id'
 
 
 

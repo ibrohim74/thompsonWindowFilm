@@ -10,7 +10,7 @@ export const product = [
                 title_en: "bron plyonka s500 en",
                 price: "5000",
                 title_img: 'https://i.ibb.co/85TJ3nG/img.png',
-                images: ['https://i.ibb.co/85TJ3nG/img.png'],
+                images: ['https://i.ibb.co/85TJ3nG/img.png','https://i.ibb.co/85TJ3nG/img.png','https://i.ibb.co/85TJ3nG/img.png','https://i.ibb.co/85TJ3nG/img.png','https://i.ibb.co/85TJ3nG/img.png',],
                 info_uz: "bron plyonka s500 uz lkamsldakmdaldmlaksmd",
                 info_ru: "bron plyonka s500 ru lkamsldakmdaldmlaksmd",
                 info_en: "bron plyonka s500 en lkamsldakmdaldmlaksmd"

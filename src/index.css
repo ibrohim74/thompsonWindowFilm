@@ -7,9 +7,9 @@ body{
   background: #F7F8F9;
 }
 .container{
-  max-width: 1400px;
-  padding: 0 15px;
-  margin: 0 auto;
+  max-width: 1400px !important;
+  padding: 0 15px !important;
+  margin: 0 auto !important;
 }
 li{
   list-style: none;
