@@ -3,22 +3,12 @@ import {useParams} from "react-router";
 import style from './itemProduct.module.css';
 import {product} from '../../db/db';
 import Navbar from "../../component/navbar/navbar";
-import {ImageSlider} from "image-slider-react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Opisaniya from "./opisaniya";
 import Xaraktristika from "./xaraktristika";
 import FormProducts from "../../component/form/formProducts";
+import ImgSlider from "../../component/imgSlider/imgSlider";
 
-
-const images = [
-    "https://cdn.stocksnap.io/img-thumbs/960w/PS7M4VMB9P.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/SVSBXHN1OU.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/KLSTPV1LBV.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/N06ELOLAT9.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/YN0MX9OUSY.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/JVBWZNCQLW.jpg",
-    "https://cdn.stocksnap.io/img-thumbs/960w/LN6MZNMBUR.jpg"
-];
 const ItemProduct = () => {
     const [productData, setProductData] = useState(null);
     const [xaraktristika, setXaraktristika] = useState(false)
@@ -50,8 +40,9 @@ const ItemProduct = () => {
                 <div className={style.item_product_box}>
                     {productData ? (
                         <div key={productData.id} className={style.item_product_item}>
-                            <div className={style.item_product_item_header}>
-                                <ImageSlider images={productData.images} width={'100%'} height={'100%'}/>
+                            <div className={style.item_product_item_header} style={{overflow:"hidden"}}>
+                               <ImgSlider/>
+
                                 <div className={`${style.item_product_item_header_text} ${mediaQuery && 'container'}`}>
                                     <h1>{productData.title_en}</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto dicta
