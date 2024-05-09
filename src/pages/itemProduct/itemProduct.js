@@ -51,7 +51,7 @@ const ItemProduct = () => {
                     {productData ? (
                         <div key={productData.id} className={style.item_product_item}>
                             <div className={style.item_product_item_header}>
-                                <ImageSlider images={productData.images}/>
+                                <ImageSlider images={productData.images} width={'100%'} height={'100%'}/>
                                 <div className={`${style.item_product_item_header_text} ${mediaQuery && 'container'}`}>
                                     <h1>{productData.title_en}</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto dicta
