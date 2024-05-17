@@ -96,6 +96,7 @@
     border: none;
     display: flex;
     flex-direction: column;
+    top: -2px;
 }
 
 .menu_app_item {

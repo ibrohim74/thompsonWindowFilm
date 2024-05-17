@@ -13,7 +13,7 @@ import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import {Dropdown, Space} from "antd";
 import {DownOutlined} from "@ant-design/icons";
-import {HOME, PRODUCT} from "../../processes/const";
+import {AUTOMOTIVE_FILM, CONTACT, HOME, PRODUCT, TECHNOLOGY, WINDOW_FILM} from "../../processes/const";
 import HomeIcon from '@mui/icons-material/Home';
 import {useLanguage} from "../../processes/lang/LangContext";
 import {languages} from '../../processes/lang/langs'
@@ -74,7 +74,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
 
             <div className={style.menu_app} style={appMenu ? {right: '0'} : {right: '-100%'}}>
                 <div className={style.menu_app_item}>
-                    <Link to={PRODUCT.replace(':category','BronPlyonka')}
+                    <Link to={WINDOW_FILM}
                           onClick={() => {
                               window.scrollTo({
                                   top: 0,
@@ -87,7 +87,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                 </div>
 
                 <div className={style.menu_app_item}>
-                    <Link to={PRODUCT.replace(':category','Tanirovka')}
+                    <Link to={AUTOMOTIVE_FILM}
                           onClick={() => {
                               window.scrollTo({
                                   top: 0,
@@ -97,36 +97,29 @@ const BottomAppBar = ({onlyIcon = true}) => {
                           }}
                     >Tanirovka</Link>
                 </div>
-                <div className={style.menu_app_item}
-                     onClick={() => {
-                         window.scrollTo({
-                             top: 0,
-                             behavior: "smooth"
-                         });
-                         setAppMenu(false)
-                     }}
-                >
-                    <Link to={PRODUCT.replace(':category','BronPlyonka2')}
+                <div className={style.menu_app_item}>
+                    <Link to={TECHNOLOGY}
                           onClick={() => {
                               window.scrollTo({
                                   top: 0,
                                   behavior: "smooth"
                               });
-                              setAppMenu(false)
+                                  setAppMenu(false)
                           }}
-                    >Bron Plyonka2</Link>
+                    >Technology</Link>
                 </div>
-                <div className={style.menu_app_item}
-                     onClick={() => {
-                         window.scrollTo({
-                             top: 0,
-                             behavior: "smooth"
-                         });
-                         setAppMenu(false)
-                     }}
-                >
-                    <Link to={PRODUCT.replace(':category','Tanirovka2')}>Tanirovka2</Link>
+                <div className={style.menu_app_item}>
+                    <Link to={CONTACT}
+                          onClick={() => {
+                              window.scrollTo({
+                                  top: 0,
+                                  behavior: "smooth"
+                              });
+                                  setAppMenu(false)
+                          }}
+                    >Contact</Link>
                 </div>
+
             </div>
         </>
     );

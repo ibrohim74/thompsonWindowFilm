@@ -41,7 +41,7 @@
     position: relative;
 }
 .home_product_category_title span{
-    color: red;
+    color: #B12525;
     font-size: 60px;
     z-index: -2;
 }

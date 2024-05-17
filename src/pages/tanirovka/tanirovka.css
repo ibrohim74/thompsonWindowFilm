@@ -1,0 +1,9 @@
+.swiper-slide {
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: none !important;
+}
+.swiper-slide table th {width: 100% !important}
+.swiper-slide table  {width: 100% !important}
+.swiper-slide table td {width: 50% !important ; padding: 15px 0 0 0}
+.swiper{height: auto !important ; }

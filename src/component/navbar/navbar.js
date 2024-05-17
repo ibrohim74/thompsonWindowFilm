@@ -8,7 +8,7 @@ import {languages} from "../../processes/lang/langs";
 import {DownOutlined} from "@ant-design/icons";
 import {useLanguage} from "../../processes/lang/LangContext";
 import {Link, useNavigate} from "react-router-dom";
-import {HOME} from "../../processes/const";
+import {AUTOMOTIVE_FILM, CONTACT, HOME, TECHNOLOGY, WINDOW_FILM} from "../../processes/const";
 const Navbar = ({onlyIcon = true  , navStyle} ) => {
     const mediaQuery = useMediaQuery('(max-width:750px)');
     const {handleLanguageChange, selectedLanguage} = useLanguage();
@@ -27,16 +27,16 @@ const Navbar = ({onlyIcon = true  , navStyle} ) => {
                             <Link to={HOME} className="nav-link">Home</Link>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Bron Plyonka</a>
+                            <Link to={WINDOW_FILM} className="nav-link">Bron Plyonka</Link>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Tanirovka</a>
+                            <Link to={AUTOMOTIVE_FILM} className="nav-link">Tanirovka</Link>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Bron Plyonka 2</a>
+                            <Link to={TECHNOLOGY} className="nav-link">Technology</Link>
                         </li>
                         <li className={style.nav_item}>
-                            <a href="#" className="nav-link">Tanirovka 2</a>
+                            <Link to={CONTACT} className="nav-link">Contact</Link>
                         </li>
                         <li>
                             <Dropdown
