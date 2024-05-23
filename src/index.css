@@ -4,7 +4,9 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  background: #F7F8F9;
+  /*background: #F7F8F9;*/
+  background: #191919;
+  color: white;
 }
 .container{
   max-width: 1400px !important;
