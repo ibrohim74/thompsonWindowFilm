@@ -2,22 +2,25 @@ import React from 'react';
 import {product} from "../../db/db";
 import style from './bronPlyonka.module.css'
 import Navbar from "../../component/navbar/navbar";
+import {Icon} from "../../assets/icons/icon";
+import {useTranslation} from "react-i18next";
 
 const BronPlyonka = () => {
+    const { t } = useTranslation();
+    const langStorage = window.localStorage.getItem('i18nextLng');
     return (
         <div style={{marginBottom: '10vh'}}>
             <Navbar/>
             <div className={style.window_header}>
                 <video src={require("../../assets/videos/videoBronPlyonka.mp4")} autoPlay muted loop></video>
                 <div className={style.window_header_text}>
-                    <h1>KDX LUMI PAINT PROTECTION FILM</h1>
+                    <h1 style={{textTransform:"uppercase"}}>{t('bronPlyonka.title_bronPlyonka')}</h1>
                     <div className={style.window_header_text_content}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi at atque consectetur
-                            cumque, debitis distinctio expedita incidunt laboriosam maxime minus, officiis optio quam
-                            quos rem sunt, totam voluptatem? Ab at, consectetur cumque ducimus eaque eligendi expedita
-                           </p>
+                        <p>
+                            {t("bronPlyonka.info")}
+                        </p>
                         <div className={style.window_item_content_btn}>
-                            Give me samples
+                            {t('give_samples')}
                         </div>
                     </div>
                 </div>
@@ -34,16 +37,16 @@ const BronPlyonka = () => {
                                 <div className={style.window_item_content}>
                                     <div className={style.window_item_content_title}>
                                         <h1>{item.title_uz}</h1>
+                                        <img src={item.part_img} alt="" width={item.party_img_width ? item.party_img_width : '200px'} height={68} style={{objectFit:"cover"}}/>
                                     </div>
                                     <div className={style.window_item_content_box_info}>
-                                        {item.box_info.map(({mil , years , healing , tpu})=>{
-                                            return(
+                                        {item.box_info.map(({mil, years, healing, tpu}) => {
+                                            return (
                                                 <div className={style.window_item_content_box_info_item}>
                                                     {mil}
-                                                    {mil && <span>mil</span>}
                                                     {healing}
                                                     {tpu}
-                                                    {years} {years && <span>year</span>}
+                                                    {years} {years && <span>  year</span>}
 
                                                 </div>
                                             )
@@ -52,22 +55,48 @@ const BronPlyonka = () => {
 
                                     <div className={style.window_item_content_list}>
                                         <ul>
-                                            {item.listLeft.map((itemList)=>(
+                                            {langStorage === 'uz' && item.listRight_uz.map((itemList) => (
                                                 <li>
-                                                    <img src={require('../../assets/icons/circle.png')} alt=""/>
-                                                    {itemList}</li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
+                                            ))}
+                                            {langStorage === 'ru' && item.listRight_ru.map((itemList) => (
+                                                <li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
+                                            ))}
+                                            {langStorage === 'en' && item.listRight_en.map((itemList) => (
+                                                <li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
                                             ))}
                                         </ul>
                                         <ul>
-                                            {item.listRight.map((itemList)=>(
-
-                                                <li><img src={require('../../assets/icons/circle.png')} alt=""/>
-                                                    {itemList}</li>
+                                            {langStorage === 'uz' && item.listLeft_uz.map((itemList) => (
+                                                <li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
+                                            ))}
+                                            {langStorage === 'ru' && item.listLeft_ru.map((itemList) => (
+                                                <li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
+                                            ))}
+                                            {langStorage === 'en' && item.listLeft_en.map((itemList) => (
+                                                <li>
+                                                    <Icon.Circle/>
+                                                    {itemList}
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
                                     <div className={style.window_item_content_btn}>
-                                        Give me samples
+                                        {t('give_samples')}
                                     </div>
                                 </div>
                             </div>

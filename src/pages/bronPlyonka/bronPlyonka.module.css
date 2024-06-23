@@ -51,7 +51,7 @@
     display: flex;
     justify-content: space-around;
     height: 400px;
-    margin: 40px 0;
+    margin: 80px 0;
 }
 
 .window_item_img {
@@ -72,11 +72,15 @@
 
 .window_item_content_title {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 .window_item_content_title h1{
     font-size: 40px;
     font-weight: 400;
-    margin: 0 0 15px 0;
+    margin: 0 0 -10px 0;
 }
 .window_item_content_box_info{
     width: 100%;
@@ -107,7 +111,7 @@
     margin: 10px 0;
     display: flex;
     font-size: 18px;
-    align-items: flex-start;
+    align-items: center;
 }
 .window_item_content_list li img{
     width: 10px;

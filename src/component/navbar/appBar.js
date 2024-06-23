@@ -21,6 +21,7 @@ import i18n from "i18next";
 import {useRef, useState} from "react";
 import {Icon} from "../../assets/icons/icon";
 import Footer from "../footer/footer";
+import {useTranslation} from "react-i18next";
 
 const BottomAppBar = ({onlyIcon = true}) => {
     const [appMenu, setAppMenu] = useState(false)
@@ -28,6 +29,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
 
     const {handleLanguageChange, selectedLanguage} = useLanguage();
     const paragraphRef = useRef(null);
+    const { t } = useTranslation();
 
 
     return (
@@ -83,7 +85,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                           setAppMenu(false)
                           }
                     }
-                    >Bron Plyonka</Link>
+                    >{t('navContent.protection')}</Link>
                 </div>
 
                 <div className={style.menu_app_item}>
@@ -95,7 +97,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                               });
                                   setAppMenu(false)
                           }}
-                    >Tanirovka</Link>
+                    >{t('navContent.automotive')}</Link>
                 </div>
                 <div className={style.menu_app_item}>
                     <Link to={TECHNOLOGY}
@@ -106,7 +108,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                               });
                                   setAppMenu(false)
                           }}
-                    >Technology</Link>
+                    >{t('navContent.technology')}</Link>
                 </div>
                 <div className={style.menu_app_item}>
                     <Link to={CONTACT}
@@ -117,7 +119,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                               });
                                   setAppMenu(false)
                           }}
-                    >Contact</Link>
+                    >{t('navContent.contact')}</Link>
                 </div>
 
             </div>

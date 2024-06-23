@@ -17,5 +17,6 @@ export const Icon = {
     RU,
     DownArrow,
     UpArrow,
-    Circle
+    Circle,
+
 }

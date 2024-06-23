@@ -1,67 +1,79 @@
 import React from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { product } from "../../db/db";
+import { Navigation } from 'swiper/modules';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Navbar from '../../component/navbar/navbar';
+import { Icon } from '../../assets/icons/icon';
+import { useTranslation } from 'react-i18next';
+import { product } from '../../db/db';
 import style from './tanirovka.module.css';
 import './tanirovka.css';
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { Navigation } from 'swiper/modules';
-import Navbar from "../../component/navbar/navbar";
-import {Icon} from "../../assets/icons/icon";
 
 const Tanirovka = () => {
     const mediaQuery = useMediaQuery('(max-width:750px)');
+    const { t } = useTranslation();
+    const langStorage = window.localStorage.getItem('i18nextLng');
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className={style.window_header}>
-                <video src={require("../../assets/videos/videoBronPlyonka.mp4")} autoPlay muted loop></video>
+                <video src={require('../../assets/videos/videoAutomotive.mp4')} autoPlay muted loop></video>
                 <div className={style.window_header_text}>
-                    <h1>KDX Automotive Film</h1>
+                    <h1>{t('tanirovka.title_tanirovka')}</h1>
                     <div className={style.window_header_text_content}>
-                        <p>Provide Superior Experience on Both Performance and Quality</p>
-                        <div className={style.window_item_content_btn}>
-                            Give me samples
-                        </div>
+                        <p>{t('provide_experience')}</p>
+                        <div className={style.window_item_content_btn}>{t('give_samples')}</div>
                     </div>
                 </div>
                 <div className={style.window_header_shadow}></div>
             </div>
             <div className="container">
                 <div className={style.tanirovka_box}>
-                    {product?.[0]?.Tanirovka?.map((item, index) => (
+                    {product[0]?.Tanirovka?.map((item, index) => (
                         <div className={style.tanirovka_item} key={index}>
                             <div className={style.tanirovka_content_top}>
                                 <div className={style.tanirovka_content_left}>
-                                    <h1 style={{color:"red"}}>{item.title_uz}</h1>
+                                    <h1 style={{ color: 'red' }}>{item.title_uz}</h1>
                                     {mediaQuery && (
                                         <img
-                                            style={{ width: "100%", borderRadius: "10px" }}
-                                            src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Renault/KWID/10076/1705905595853/front-left-side-47.jpg?impolicy=resize&imwidth=480"
+                                            style={{ width: '100%', borderRadius: '10px' }}
+                                            src={item.title_img}
                                             alt=""
                                         />
                                     )}
-                                    <p>{item.info_uz}</p>
+                                   {langStorage === 'en' &&  <p>{item.info_en}</p>}
+                                   {langStorage === 'uz' &&  <p>{item.info_uz}</p>}
+                                   {langStorage === 'ru' &&  <p>{item.info_ru}</p>}
                                     <ul>
-                                        {item.info_list.map((infoItem, infoIndex) => (
-                                            <li key={infoIndex}>
-                                                <Icon.Circle/>
-                                                {infoItem}
-                                            </li>
-                                        ))}
+                                        {langStorage === 'en' &&
+                                            item.info_list_en?.map((infoItem, infoIndex) => (
+                                                <li >
+                                                    <Icon.Circle />
+                                                    {infoItem}
+                                                </li>
+                                            ))}
+                                        {langStorage === 'ru' &&
+                                            item.info_list_ru?.map((infoItem, infoIndex) => (
+                                                <li >
+                                                    <Icon.Circle />
+                                                    {infoItem}
+                                                </li>
+                                            ))}
+                                        {langStorage === 'uz' &&
+                                            item.info_list_uz?.map((infoItem, infoIndex) => (
+                                                <li >
+                                                    <Icon.Circle />
+                                                    {infoItem}
+                                                </li>
+                                            ))}
                                     </ul>
                                 </div>
                                 {!mediaQuery && (
                                     <div className={style.tanirovka_content_right}>
-                                        <img
-                                            src={item.title_img}
-                                            alt=""
-                                        />
+                                        <img src={item.title_img} alt="" />
                                     </div>
                                 )}
                             </div>
@@ -72,14 +84,15 @@ const Tanirovka = () => {
                                             <SwiperSlide key={tableIndex} style={{ width: '100%' }}>
                                                 <table>
                                                     <thead>
-                                                    <tr> <th>{tableItem.product_name}</th></tr>
+                                                    <tr>
+                                                        <th>{tableItem.product_name}</th>
+                                                    </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
                                                         <td>VLT (%)</td>
                                                         <td>{tableItem.vlt}</td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>UVR (%)</td>
                                                         <td>{tableItem.uvr}</td>
@@ -96,7 +109,6 @@ const Tanirovka = () => {
                                                         <td>IRER(780-2500NM)(%)</td>
                                                         <td>{tableItem.irer}</td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>THICKNESS (MIL)</td>
                                                         <td>{tableItem.thickness}</td>
@@ -114,14 +126,12 @@ const Tanirovka = () => {
                                     <table>
                                         <thead>
                                         <tr>
-                                            <th style={{ width: "145px" }}>PRODUCT</th>
+                                            <th style={{ width: '145px' }}>PRODUCT</th>
                                             <th>VLT (%)</th>
-
                                             <th>UVR (%)</th>
                                             <th>TSER (%)</th>
                                             <th>IRR(900-1000NM)(%)</th>
                                             <th>IRER(780-2500NM)(%)</th>
-
                                             <th>THICKNESS (MIL)</th>
                                             <th>WARRANTY (YEAR)</th>
                                         </tr>
@@ -129,14 +139,20 @@ const Tanirovka = () => {
                                         <tbody>
                                         {item.table.products.map((tableItem, tableIndex) => (
                                             <tr key={tableIndex}>
-                                                <td style={{ textTransform: "uppercase", fontWeight: "700", width: "145px" }}>{tableItem.product_name}</td>
+                                                <td
+                                                    style={{
+                                                        textTransform: 'uppercase',
+                                                        fontWeight: '700',
+                                                        width: '145px',
+                                                    }}
+                                                >
+                                                    {tableItem.product_name}
+                                                </td>
                                                 <td>{tableItem.vlt}</td>
-
                                                 <td>{tableItem.uvr}</td>
                                                 <td>{tableItem.tser}</td>
                                                 <td>{tableItem.irr}</td>
                                                 <td>{tableItem.irer}</td>
-
                                                 <td>{tableItem.thickness}</td>
                                                 <td>{tableItem.warrant}</td>
                                             </tr>
@@ -154,4 +170,3 @@ const Tanirovka = () => {
 };
 
 export default Tanirovka;
-

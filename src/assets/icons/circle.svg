@@ -1,13 +1,19 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="16.000000pt" height="16.000000pt" viewBox="0 0 16.000000 16.000000"
- preserveAspectRatio="xMidYMid meet">
-
-<g transform="translate(0.000000,16.000000) scale(0.07,-0.07)"
-fill="#FF0000" stroke="none">
-<path d="M52 140 c-49 -20 -48 -101 3 -120 55 -21 106 30 85 85 -7 19 -50 49
--63 44 -1 0 -12 -4 -25 -9z"/>
-</g>
+<svg width="16px" height="16px" viewBox="-7.2 -7.2 86.40 86.40"
+     id="emoji" xmlns="http://www.w3.org/2000/svg" fill="#b0e9fc"
+     stroke="#b0e9fc">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+       stroke-linejoin="round" stroke="#CCCCCC"
+       stroke-width="0.576"></g>
+    <g id="SVGRepo_iconCarrier">
+        <g id="color">
+            <circle cx="36" cy="36.0001" r="28"
+                    fill="#ff0d00"></circle>
+        </g>
+        <g id="line">
+            <circle cx="36" cy="36.0001" r="28" fill="none"
+                    stroke="#000000" stroke-linejoin="round"
+                    stroke-width="2"></circle>
+        </g>
+    </g>
 </svg>

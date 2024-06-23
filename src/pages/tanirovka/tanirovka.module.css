@@ -59,6 +59,7 @@
     display: flex;
     width: 90%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .tanirovka_content_left {
@@ -91,8 +92,8 @@
 }
 
 .tanirovka_content_right {
-    width: 40%;
-    margin-top: 50px;
+    width: 50%;
+    /*margin-top: 50px;*/
     height: 100%;
     display: flex;
     justify-content: center;

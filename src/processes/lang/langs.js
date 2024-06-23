@@ -16,6 +16,6 @@ export const languages = [
     label: "Russian",
     key: "2",
     code: "ru",
-    icon: <Icon.RU />,
+    icon: <Icon.RU/>,
   },
 ];

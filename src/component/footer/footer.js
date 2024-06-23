@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './footer.css'
 
 const Footer = () => {
-    const [initialState , setInitialState] = useState()
+    const [initialState, setInitialState] = useState()
     return (
         <div>
             <footer className="footer-section">
@@ -14,7 +14,7 @@ const Footer = () => {
                                     <i className="fas fa-map-marker-alt"></i>
                                     <div className="cta-text">
                                         <h4>Location</h4>
-                                        <span>Toshkent , Sergeli 34 43 32</span>
+                                        <span>улица Махтумкули 1, Тоshkent</span>
                                     </div>
                                 </div>
                             </div>
@@ -23,7 +23,7 @@ const Footer = () => {
                                     <i className="fas fa-phone"></i>
                                     <div className="cta-text">
                                         <h4>Tell number</h4>
-                                        <span>+998 99 123 45 67</span>
+                                        <span>+998 99 800 24 25</span>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@ const Footer = () => {
                                     <i className="far fa-envelope-open"></i>
                                     <div className="cta-text">
                                         <h4>Email</h4>
-                                        <span>mail@info.com</span>
+                                        <span>formula1515@mail.ru</span>
                                     </div>
                                 </div>
                             </div>
@@ -46,10 +46,9 @@ const Footer = () => {
 
                                     </div>
                                     <div className="footer-text" style={{marginBottom: '30px'}}>
-
                                         <iframe
                                             style={{border: "none"}}
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11991.902464338094!2d69.22815304999999!3d41.28763515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a4ea6b86e67%3A0x91ed3e9e44b3b0ab!2z0J3QvtCy0LfQsA!5e0!3m2!1sru!2s!4v1714861645524!5m2!1sru!2s"
+                                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2722.210328317328!2d69.3203425582207!3d41.30447959544493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE4JzE2LjMiTiA2OcKwMTknMTQuOCJF!5e0!3m2!1sru!2s!4v1719059142313!5m2!1sru!2s"
                                             width="100%" height="450" allowFullScreen="" loading="lazy"
                                             referrerPolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
