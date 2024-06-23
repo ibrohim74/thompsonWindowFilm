@@ -5,10 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="google" content="notranslate">
+
+
+    <meta name="description" id="meta-description" content="Thompson Window Film предлагает качественные решения для тонировки и пленок для автомобилей. Купите бронепленку и тонировку для защиты вашего автомобиля и сохранения вашей приватности. У нас есть широкий ассортимент пленок и тонировок.">
+    <meta name="keywords" id="meta-keywords" content="бронепленка, тонировка, автомобильная пленка, автомобильная тонировка, защитная пленка, пленка для машин, Thompson Window Film, защита автомобилей, приватность автомобилей, продажа пленок">
+    <meta name="author" content="Thompson Window Film">
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" id="og-title" content="Thompson Window Film">
+    <meta property="og:description" id="og-description" content="Качественные пленки для защиты вашего автомобиля и сохранения приватности.">
+    <meta property="og:image" content="./img.png">
+    <meta property="og:url" content="https://thompson-window-film.vercel.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="Thompson Window Film">
+    <meta name="twitter:description" id="twitter-description" content="Качественные пленки для защиты вашего автомобиля и сохранения приватности.">
+    <meta name="twitter:image" content="./img.png">
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img.png" type="image/x-icon">
     <title>Thompson window film</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var userLang = navigator.language || navigator.userLanguage;
+
+        var metaDescription = document.getElementById('meta-description');
+        var metaKeywords = document.getElementById('meta-keywords');
+        var ogTitle = document.getElementById('og-title');
+        var ogDescription = document.getElementById('og-description');
+        var twitterTitle = document.getElementById('twitter-title');
+        var twitterDescription = document.getElementById('twitter-description');
+
+        if (userLang.startsWith('uz')) {
+          metaDescription.content = "Thompson Window Film - Avtomobillar uchun bron plyonka va tanirovka mahsulotlarini sotib oling. Sifatli plyonkalar bilan avtomobilingizni himoya qiling va xususiyatingizni saqlang. Bizda keng turdagi plyonka va tanirovka variantlari mavjud.";
+          metaKeywords.content = "bron plyonka, tanirovka, avtomobil plyonkasi, avtomobil tanirovkasi, himoya plyonka, mashina plyonkasi, Thompson Window Film, avtomobil himoyasi, avtomobil xususiyati, plyonka sotish";
+          ogTitle.content = "Thompson Window Film - Avtomobillar uchun bron plyonka va tanirovka";
+          ogDescription.content = "Sifatli plyonkalar bilan avtomobilingizni himoya qiling va xususiyatingizni saqlang.";
+          twitterTitle.content = "Thompson Window Film - Avtomobillar uchun bron plyonka va tanirovka";
+          twitterDescription.content = "Sifatli plyonkalar bilan avtomobilingizni himoya qiling va xususiyatingizni saqlang.";
+        } else if (userLang.startsWith('ru')) {
+          metaDescription.content = "Thompson Window Film предлагает качественные решения для тонировки и пленок для автомобилей. Купите бронепленку и тонировку для защиты вашего автомобиля и сохранения вашей приватности. У нас есть широкий ассортимент пленок и тонировок.";
+          metaKeywords.content = "бронепленка, тонировка, автомобильная пленка, автомобильная тонировка, защитная пленка, пленка для машин, Thompson Window Film, защита автомобилей, приватность автомобилей, продажа пленок";
+          ogTitle.content = "Thompson Window Film - Бронепленка и тонировка для автомобилей";
+          ogDescription.content = "Качественные пленки для защиты вашего автомобиля и сохранения приватности.";
+          twitterTitle.content = "Thompson Window Film - Бронепленка и тонировка для автомобилей";
+          twitterDescription.content = "Качественные пленки для защиты вашего автомобиля и сохранения приватности.";
+        } else {
+          metaDescription.content = "Thompson Window Film offers top-quality window tinting and film solutions for residential, commercial, and automotive needs.";
+          metaKeywords.content = "window film, window tinting, residential window film, commercial window film, automotive window tinting, energy-saving window film, privacy window film, decorative window film, UV protection window film, security window film, solar control window film, glare reduction window film, heat reduction window film, window film installation, professional window tinting";
+          ogTitle.content = "Thompson Window Film";
+          ogDescription.content = "Thompson Window Film offers top-quality window tinting and film solutions for residential, commercial, and automotive needs.";
+          twitterTitle.content = "Thompson Window Film";
+          twitterDescription.content = "Thompson Window Film offers top-quality window tinting and film solutions for residential, commercial, and automotive needs.";
+        }
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49ECRNZ5R1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-49ECRNZ5R1');
+    </script>
     <script
             src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"
