@@ -44,25 +44,25 @@ const Tanirovka = () => {
                                             alt=""
                                         />
                                     )}
-                                   {langStorage === 'en' &&  <p>{item.info_en}</p>}
-                                   {langStorage === 'uz' &&  <p>{item.info_uz}</p>}
-                                   {langStorage === 'ru' &&  <p>{item.info_ru}</p>}
+                                   {langStorage === 'en' || langStorage === 'en-EN' &&  <p>{item.info_en}</p>}
+                                   {langStorage === 'uz' || langStorage === 'uz-UZ' &&  <p>{item.info_uz}</p>}
+                                   {langStorage === 'ru' || langStorage === 'ru-RU' &&  <p>{item.info_ru}</p>}
                                     <ul>
-                                        {langStorage === 'en' &&
+                                        {langStorage === 'en' || langStorage === 'en-EN' &&
                                             item.info_list_en?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />
                                                     {infoItem}
                                                 </li>
                                             ))}
-                                        {langStorage === 'ru' &&
+                                        {langStorage === 'ru' || langStorage === 'ru-RU' &&
                                             item.info_list_ru?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />
                                                     {infoItem}
                                                 </li>
                                             ))}
-                                        {langStorage === 'uz' &&
+                                        {langStorage === 'uz' || langStorage === 'uz-UZ' &&
                                             item.info_list_uz?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />

@@ -55,19 +55,19 @@ const BronPlyonka = () => {
 
                                     <div className={style.window_item_content_list}>
                                         <ul>
-                                            {langStorage === 'uz' && item.listRight_uz.map((itemList) => (
+                                            {langStorage === 'uz' || langStorage === 'uz-UZ'  && item.listRight_uz.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
                                                 </li>
                                             ))}
-                                            {langStorage === 'ru' && item.listRight_ru.map((itemList) => (
+                                            {langStorage === 'ru' || langStorage === 'ru-RU' && item.listRight_ru.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
                                                 </li>
                                             ))}
-                                            {langStorage === 'en' && item.listRight_en.map((itemList) => (
+                                            {langStorage === 'en' || langStorage === 'en-EN' && item.listRight_en.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
@@ -75,19 +75,19 @@ const BronPlyonka = () => {
                                             ))}
                                         </ul>
                                         <ul>
-                                            {langStorage === 'uz' && item.listLeft_uz.map((itemList) => (
+                                            {langStorage === 'uz' || langStorage === 'uz-UZ'  && item.listLeft_uz.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
                                                 </li>
                                             ))}
-                                            {langStorage === 'ru' && item.listLeft_ru.map((itemList) => (
+                                            {langStorage === 'ru' || langStorage === 'ru-RU' && item.listLeft_ru.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
                                                 </li>
                                             ))}
-                                            {langStorage === 'en' && item.listLeft_en.map((itemList) => (
+                                            {langStorage === 'en' || langStorage === 'en-EN' && item.listLeft_en.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}

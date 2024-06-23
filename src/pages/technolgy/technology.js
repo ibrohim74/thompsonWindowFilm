@@ -5,7 +5,6 @@ import {useTranslation} from "react-i18next";
 
 const Technology = () => {
     const { t } = useTranslation();
-    const langStorage = window.localStorage.getItem('i18nextLng');
     return (
         <div>
             <Navbar/>
