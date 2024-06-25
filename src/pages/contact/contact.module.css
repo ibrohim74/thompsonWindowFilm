@@ -82,16 +82,16 @@
     border-radius: 8px;
     padding: 5px;
     resize: none;
-    color: #000;
+    color: #fff;
     height: 96px;
-    border: 1px solid #414141;
+    border: 1px solid white;
     background-color: transparent;
     font-family: inherit;
     outline: none;
 }
 .coolinput label.text {
     font-size: 0.75rem;
-    color: #000;
+    color: #fff;
     font-weight: 700;
     position: relative;
     top: 0px;
@@ -106,7 +106,8 @@
     font-size: 14px;
     border: none;
     background: transparent;
-    border-bottom: 2px black solid;
+    color: white;
+    border-bottom: 2px white solid;
 }
 
 .coolinput input[type=text].input:focus {

@@ -4,8 +4,8 @@ import {useTranslation} from "react-i18next";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {product} from "../../db/db";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
-import {AUTOMOTIVE_FILM, ITEM_PRODUCT, PRODUCT, WINDOW_FILM} from "../../processes/const";
+import {Link, useNavigate} from "react-router-dom";
+import {AUTOMOTIVE_FILM, CONTACT, ITEM_PRODUCT, PRODUCT, WINDOW_FILM} from "../../processes/const";
 import Navbar from "../../component/navbar/navbar";
 import {EyeOutlined, LockOutlined, SafetyCertificateOutlined} from "@ant-design/icons";
 import {Icon} from "../../assets/icons/icon";
@@ -29,231 +29,251 @@ const Home = () => {
             <div className="container">
                 <section className="advertisers-service-sec ">
                     <div className="section-header text-center">
-                        <h2 className="fw-bold fs-1">
-                            Шесть
-                            <span className="b-class-secondary"> особенностей </span>продукта
-                        </h2>
+                        {langStorage === 'ru' || langStorage === "ru-RU" ?
+                            (<h2 className="fw-bold fs-1">
+                                Шесть
+                                <span className="b-class-secondary"> особенностей </span>продукта
+                            </h2>) : ''
+                        }
+                        {langStorage === 'en' || langStorage === "en-EN" ?
+                            (<h2 className="fw-bold fs-1">
+                                Six
+
+                                <span className="b-class-secondary"> features </span>product
+                            </h2>) : ""
+                        }
+                        {langStorage === 'uz' || langStorage === "uz-UZ" ?
+                            (<h2 className="fw-bold fs-1">
+                                Mahsulotning olti
+                                <span className="b-class-secondary"> xususiyati </span>
+                            </h2>) : ""
+                        }
+
                     </div>
                     <div className="card_box">
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
-                                    <SafetyCertificateOutlined />
+                                    <SafetyCertificateOutlined style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        color: "black"
+                                    }}/>
                                 </div>
-                                <h3>Himoya</h3>
+                                <h3>{t("homeContent.home_s2_info.s1.title")}</h3>
                                 <p>
-                                    Zashitniy plyonkalar avtomobilni tashqi ta'sirlardan, shu jumladan chang, kir, zarar
-                                    yetkazuvchi moddalar, tosh va boshqa ob'ektlar ta'siridan himoya qiladi.
+                                    {t("homeContent.home_s2_info.s1.description")}
                                 </p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
+                                    <Icon.EstetikKorinish/>
                                 </div>
-                                <h3>Estetik ko'rinish</h3>
+                                <h3>{t("homeContent.home_s2_info.s2.title")}</h3>
                                 <p>
-                                    Avtomobilnaya plyonkalar avtomobilning tashqi ko'rinishini yaxshilashga yordam
-                                    beradi, unga yangi, zamonaviy va chiroyli ko'rinish beradi. Rangli plyonkalar orqali
-                                    avtomobilning dizaynini o'zgartirish mumkin.
+                                    {t("homeContent.home_s2_info.s2.description")}
                                 </p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
-                                    <i className="fa-solid fa-chart-line"></i>
+                                    <Icon.UvProtect/>
                                 </div>
-                                <h3>UV nuridan himoya</h3>
+                                <h3>{t("homeContent.home_s2_info.s3.title")}</h3>
                                 <p>
-                                    Plyonkalar avtomobilning bo'yoq qoplamasini ultrabinafsha (UV) nurlaridan himoya
-                                    qiladi, natijada bo'yoqning rangini yo'qotishidan saqlaydi va avtomobilning tashqi
-                                    ko'rinishini uzoq muddat saqlaydi.
+                                    {t("homeContent.home_s2_info.s3.description")}
                                 </p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
-                                    <i className="fa-solid fa-chart-line"></i>
+                                    <Icon.SunProtect/>
                                 </div>
-                                <h3>Ichki qismni himoya qilish:</h3>
+                                <h3>{t("homeContent.home_s2_info.s4.title")}</h3>
                                 <p>
-                                    Avtomobilnaya plyonkalar oynalarga yopishtirilganda, ichki qismni issiq havo va UV
-                                    nurlaridan himoya qiladi, salonda qulay haroratni saqlaydi va ichki bezaklar,
-                                    asboblar taxtasi va o'rindiqlarni yorilishdan yoki rangi so'lishdan himoya qiladi
+                                    {t("homeContent.home_s2_info.s4.description")}
                                 </p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
-                                    <i className="fa-solid fa-chart-line"></i>
+                                    <Icon.Hand/>
                                 </div>
-                                <h3>Tejamkorlik</h3>
+                                <h3>{t("homeContent.home_s2_info.s5.title")}</h3>
                                 <p>
-                                    Avtomobilnaya va zashitniy plyonkalar avtomobil egalariga ta'mirlash va bo'yash
-                                    xarajatlarini kamaytirishga yordam beradi, chunki plyonkalar kichik zararlarni
-                                    oldini olish va bartaraf qilishda yordam beradi.
+                                    {t("homeContent.home_s2_info.s5.description")}
                                 </p>
                             </div>
                         </div>
                         <div className="col">
                             <div className="service-card">
                                 <div className="icon-wrapper">
-                                    <i className="fa-solid fa-chart-line"></i>
+                                    <Icon.Unseen/>
                                 </div>
-                                <h3>Maxfiylik</h3>
-                                <p> Qoraytirilgan oynalar uchun ishlatiladigan plyonkalar avtomobil ichidagi narsalarni
-                                    tashqaridan ko'rinishini kamaytiradi, shu bilan maxfiylikni ta'minlaydi va avtomobil
-                                    ichidagi mol-mulkni o'g'irlikdan himoya qiladi.</p>
+                                <h3>{t("homeContent.home_s2_info.s6.title")}</h3>
+                                <p> {t("homeContent.home_s2_info.s6.description")}</p>
                             </div>
                         </div>
 
                     </div>
                 </section>
 
+                {mediaQuery ? (
+                        <div className={"container"}>
+                                <div className="info_card">
+                                    <div className="info_card_header">
+                                        <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/XM/10570/1689672872537/front-left-side-47.jpg" alt=""/>
+                                    </div>
+                                    <div className="info_card_text">
+                                        <h1>{t('navContent.protection')}</h1>
+                                        <p>
+                                            {t('homeContent.home_info.bronPlyonka')}
+                                        </p>
 
-                <div className="projcard-container">
+                                        <button><Link to={WINDOW_FILM}
+                                                      onClick={() => {
+                                                          window.scrollTo({
+                                                              top: 0,
+                                                              behavior: "smooth"
+                                                          });
+                                                      }}
+                                        >{t('view_all')} </Link></button>
+                                    </div>
+                                </div>
+                                <div className="info_card">
+                                    <div className="info_card_header">
+                                        <img src="https://static.euronews.com/articles/stories/08/15/72/20/1200x675_cmsv2_e2a11b79-cec0-546f-ade6-bf9773801b5b-8157220.jpg" alt=""/>
+                                    </div>
+                                    <div className="info_card_text">
+                                        <h1>{t('navContent.automotive')}</h1>
+                                        <p>
+                                            {t('homeContent.home_info.automotive')}
+                                        </p>
 
-                    <div className="projcard projcard-blue">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1041"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Cupping Therapy Sessions</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
+                                        <button><Link to={AUTOMOTIVE_FILM}
+                                                      onClick={() => {
+                                                          window.scrollTo({
+                                                              top: 0,
+                                                              behavior: "smooth"
+                                                          });
+                                                      }}
+                                        >{t('view_all')} </Link></button>
+                                    </div>
                                 </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Our cupping therapy sessions are designed to
-                                    alleviate muscle tension,
-                                    improve blood flow, and promote overall relaxation. Using traditional cupping
-                                    techniques, our experienced
-                                    practitioners create a soothing and therapeutic experience to help you feel
-                                    rejuvenated and revitalized.
+                                <div className="info_card">
+                                    <div className="info_card_header">
+                                        <img src="https://c4.wallpaperflare.com/wallpaper/363/947/815/mercedes-benz-mercedes-amg-gt-black-car-car-mercedes-amg-hd-wallpaper-preview.jpg" alt=""/>
+                                    </div>
+                                    <div className="info_card_text">
+                                        <h1>{t('navContent.technology')}</h1>
+                                        <p>
+                                            {t('homeContent.home_info.texnalogiya')}
+                                        </p>
+
+                                        <button>  <Link to={CONTACT}
+                                                        onClick={() => {
+                                                            window.scrollTo({
+                                                                top: 0,
+                                                                behavior: "smooth"
+                                                            });
+                                                        }}
+                                        >{t('view_all')} </Link></button>
+                                    </div>
                                 </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
+                        </div>
+                    ) :
+                    (
+                        <div className="projcard-container">
+
+                            <div className="projcard projcard-blue">
+                                <div className="projcard-innerbox">
+                                    <img className="projcard-img" src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/XM/10570/1689672872537/front-left-side-47.jpg"/>
+                                    <div className="projcard-textbox">
+                                        <div className="projcard-title">{t('navContent.protection')}</div>
+
+                                        <div className="projcard-bar"></div>
+                                        <div className="projcard-description">
+                                            {t('homeContent.home_info.bronPlyonka')}
+                                        </div>
+                                        <div className="projcard-tagbox">
+                                            <button>
+                                                <Link to={WINDOW_FILM}
+                                                      onClick={() => {
+                                                          window.scrollTo({
+                                                              top: 0,
+                                                              behavior: "smooth"
+                                                          });
+                                                      }}
+                                                >{t('view_all')} </Link>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div className="projcard projcard-red">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1080"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Energy Healing Sessions</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
-                                </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Our energy healing sessions focus on balancing the
-                                    body's energy centers to
-                                    promote physical, emotional, and spiritual well-being. Through gentle touch and
-                                    energy manipulation, our
-                                    practitioners help restore harmony and vitality to your energy system, leaving you
-                                    feeling refreshed and
-                                    renewed.
-                                </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
+                            <div className="projcard projcard-red">
+                                <div className="projcard-innerbox">
+                                    <img className="projcard-img" src="https://static.euronews.com/articles/stories/08/15/72/20/1200x675_cmsv2_e2a11b79-cec0-546f-ade6-bf9773801b5b-8157220.jpg"/>
+                                    <div className="projcard-textbox">
+                                        <div className="projcard-title">{t('navContent.automotive')}</div>
+
+                                        <div className="projcard-bar"></div>
+                                        <div className="projcard-description">
+                                            {t('homeContent.home_info.automotive')}
+                                        </div>
+                                        <div className="projcard-tagbox">
+                                            <button>
+                                                <Link to={AUTOMOTIVE_FILM}
+                                                      onClick={() => {
+                                                          window.scrollTo({
+                                                              top: 0,
+                                                              behavior: "smooth"
+                                                          });
+                                                      }}
+                                                >{t('view_all')} </Link>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div className="projcard projcard-green">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1039"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Guided Meditation</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
-                                </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Join us for guided meditation sessions that offer
-                                    a peaceful retreat from
-                                    the stresses of daily life. Our experienced meditation guides will lead you through
-                                    calming visualizations
-                                    and breathing exercises to promote relaxation, clarity, and inner peace.
-                                </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
+                            <div className="projcard projcard-green">
+                                <div className="projcard-innerbox">
+                                    <img className="projcard-img" src="https://c4.wallpaperflare.com/wallpaper/363/947/815/mercedes-benz-mercedes-amg-gt-black-car-car-mercedes-amg-hd-wallpaper-preview.jpg"/>
+                                    <div className="projcard-textbox">
+                                        <div className="projcard-title">{t('navContent.technology')}</div>
+
+                                        <div className="projcard-bar"></div>
+                                        <div className="projcard-description">
+                                            {t('homeContent.home_info.texnalogiya')}
+                                        </div>
+                                        <div className="projcard-tagbox">
+                                            <button>
+                                                <Link to={CONTACT}
+                                                          onClick={() => {
+                                                              window.scrollTo({
+                                                                  top: 0,
+                                                                  behavior: "smooth"
+                                                              });
+                                                          }}
+                                            >{t('view_all')} </Link>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div className="projcard projcard-customcolor">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=943"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Stress Relief Workshops</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
-                                </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description"> Our stress relief workshops provide practical
-                                    tools and techniques for
-                                    managing stress and enhancing resilience. From mindfulness practices to holistic
-                                    healing modalities, our
-                                    workshops empower you to take control of your well-being and find balance in your
-                                    life.
-                                </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                    )}
 
-                    <div className="projcard projcard-blue">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1041"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Spiritual Counseling</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
-                                </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Our spiritual counseling services offer a
-                                    supportive and non-judgmental
-                                    space for exploring your spiritual path and personal growth. Our counselors are
-                                    trained to help you navigate
-                                    life's challenges and discover your inner wisdom and strength.
-                                </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="projcard projcard-red">
-                        <div className="projcard-innerbox">
-                            <img className="projcard-img" src="https://picsum.photos/800/600?image=1080"/>
-                            <div className="projcard-textbox">
-                                <div className="projcard-title">Wellness Retreats</div>
-                                <div className="projcard-subtitle">"Unlocking the power of the mind for a brighter, more
-                                    fulfilling life."
-                                </div>
-                                <div className="projcard-bar"></div>
-                                <div className="projcard-description">Escape to one of our wellness retreats for a
-                                    transformative experience of
-                                    healing and self-discovery. Immerse yourself in a nurturing environment surrounded
-                                    by nature, where you can
-                                    participate in healing practices, meditation, and workshops designed to rejuvenate
-                                    your body, mind, and
-                                    spirit.
-                                </div>
-                                <div className="projcard-tagbox">
-                                    <button><a href="">Contact </a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

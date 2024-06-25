@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import style from './contact.module.css'
 import Navbar from "../../component/navbar/navbar";
+import {useTranslation} from "react-i18next";
 const Contact = () => {
     const [initialState, setInitialState] = useState()
-
+    const {t} = useTranslation()
     return (
         <div>
 
@@ -11,7 +12,7 @@ const Contact = () => {
             <div className={style.window_header}>
                 <video src={require("../../assets/videos/videoBronPlyonka.mp4")} autoPlay muted loop></video>
                 <div className={style.window_header_text}>
-                    <h1>Contact US</h1>
+                    <h1>{t("contact")}</h1>
                 </div>
                 <div className={style.window_header_shadow}></div>
             </div>
@@ -19,17 +20,17 @@ const Contact = () => {
             <div className="container">
                 <div className={style.contact_box}>
                     <div className={style.contact_title}>
-                        <h1>Get in touch</h1>
-                        <p>Are you interested in receiving more information, samples, and pricing?</p>
+                        <h1>{t("contact")}</h1>
+                        <p>{t('contact_p')}</p>
                     </div>
 
                     <div className={style.contact_form}>
-                        <div className={style.coolinput}>
-                            <label htmlFor="input" className={style.text}>Ismingiz:</label>
+                        <div className={style.coolinput} >
+                            <label htmlFor="input" className={style.text}>{t("contact_name")}</label>
                             <input type="text"  name="input" className={style.input}/>
                         </div>
                         <div className={style.coolinput}>
-                            <label htmlFor="input" className={style.text}>Telefon Raqamingiz:</label>
+                            <label htmlFor="input" className={style.text}>{t("contact_tell")}</label>
                             <input type="text" placeholder="+998" name="input" className={style.input}
                                    value={initialState?.contacts}
                                    onChange={e => {
@@ -52,10 +53,10 @@ const Contact = () => {
                             />
                         </div>
                         <div className={style.coolinput}>
-                            <textarea type="text" placeholder="Xabar" name="input" cols="50" rows="10"  className={style.input}/>
+                            <textarea type="text" placeholder={t("contact_msg")} name="input" cols="50" rows="10"  className={style.input}/>
                         </div>
 
-                        <button>SEND</button>
+                        <button>{t("contact_send")}</button>
                     </div>
                 </div>
             </div>

@@ -34,14 +34,14 @@ const BottomAppBar = ({onlyIcon = true}) => {
 
     return (
         <>
-            <AppBar position="fixed" sx={{top: 'auto', bottom: 0, background: "#292D32"}}>
+            <AppBar position="fixed" sx={{top: 'auto', bottom: 0, background: "#151414"}}>
                 <Toolbar>
                     <Dropdown
                         menu={{
                             items: languages,
                             onClick: handleLanguageChange,
                         }}
-                        style={{zIndex: 9999, cursor: "pointer"}}
+                        style={{zIndex: 9999, cursor: "pointer" , background: "#151414"}}
                     >
                         <a onClick={(e) => e.preventDefault()}>
                             <Space>
@@ -75,7 +75,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
             </AppBar>
 
             <div className={style.menu_app} style={appMenu ? {right: '0'} : {right: '-100%'}}>
-                <div className={style.menu_app_item}>
+                <div className={style.menu_app_item} style={{marginTop:"20px"}}>
                     <Link to={WINDOW_FILM}
                           onClick={() => {
                               window.scrollTo({
@@ -121,7 +121,7 @@ const BottomAppBar = ({onlyIcon = true}) => {
                           }}
                     >{t('navContent.contact')}</Link>
                 </div>
-
+<Footer nones={"none"} />
             </div>
         </>
     );

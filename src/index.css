@@ -138,11 +138,14 @@ a {
     z-index: 3;
 }
 
-
+.advertisers-service-sec .icon-wrapper svg{
+    width: 50%;
+    height: 50%;
+}
 
 .service-card .icon-wrapper {
     background-color: #ffffff;
-    color: rgb(255, 23, 131);
+    color: black;
 }
 
 .advertisers-service-sec .service-card:hover .icon-wrapper {
@@ -179,9 +182,6 @@ a {
 
 
 
-.projcard-container {
-    margin: 50px 0;
-}
 
 
 .projcard-container,
@@ -192,7 +192,8 @@ a {
 .projcard-container {
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    width: 90%;
+    margin-top: 50px;
 }
 
 .projcard {
@@ -201,8 +202,8 @@ a {
     height: 300px;
     margin-bottom: 40px;
     border-radius: 10px;
-    background-color: #fff;
-    border: 2px solid #ddd;
+    background-color: #191919;
+    border: 2px solid #202020;
     font-size: 18px;
     overflow: hidden;
     cursor: pointer;
@@ -280,7 +281,7 @@ a {
     position: absolute;
     display: block;
     background: #ff0000bb;
-    background: #fff;
+    background: #191919;
     top: -20%;
     left: -55px;
     height: 140%;
@@ -425,7 +426,7 @@ a {
 .projcard-description {
     z-index: 10;
     font-size: 15px;
-    color: #424242;
+    color: #f1f1f1;
     height: 125px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -441,7 +442,7 @@ a {
     text-decoration: none;
     border: none;
     outline: none;
-    background: purple;
+    background: red;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
@@ -451,3 +452,26 @@ a {
     color: #ddd;
 }
 
+.info_card{
+    width: 100%;
+    margin: 30px 0;
+}
+.info_card img{
+    width: 100%;
+    border-radius: 10px;
+}
+.info_card button{
+    width: 70%;
+    cursor: default;
+    user-select: none;
+    border-radius: 25px;
+    padding: 5px 0 ;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: red;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}

@@ -10,6 +10,8 @@ import { useTranslation } from 'react-i18next';
 import { product } from '../../db/db';
 import style from './tanirovka.module.css';
 import './tanirovka.css';
+import {Link} from "react-router-dom";
+import {CONTACT} from "../../processes/const";
 
 const Tanirovka = () => {
     const mediaQuery = useMediaQuery('(max-width:750px)');
@@ -25,7 +27,9 @@ const Tanirovka = () => {
                     <h1>{t('tanirovka.title_tanirovka')}</h1>
                     <div className={style.window_header_text_content}>
                         <p>{t('provide_experience')}</p>
-                        <div className={style.window_item_content_btn}>{t('give_samples')}</div>
+                       <Link to={CONTACT}>
+                           <div className={style.window_item_content_btn}>{t('give_samples')}</div>
+                       </Link>
                     </div>
                 </div>
                 <div className={style.window_header_shadow}></div>
@@ -44,31 +48,31 @@ const Tanirovka = () => {
                                             alt=""
                                         />
                                     )}
-                                   {langStorage === 'en' || langStorage === 'en-EN' &&  <p>{item.info_en}</p>}
-                                   {langStorage === 'uz' || langStorage === 'uz-UZ' &&  <p>{item.info_uz}</p>}
-                                   {langStorage === 'ru' || langStorage === 'ru-RU' &&  <p>{item.info_ru}</p>}
+                                   {langStorage === 'en' || langStorage === 'en-EN' ?  <p>{item.info_en}</p> :""}
+                                   {langStorage === 'uz' || langStorage === 'uz-UZ' ?  <p>{item.info_uz}</p> : ""}
+                                   {langStorage === 'ru' || langStorage === 'ru-RU' ?  <p>{item.info_ru}</p> : ""}
                                     <ul>
-                                        {langStorage === 'en' || langStorage === 'en-EN' &&
+                                        {langStorage === 'en' || langStorage === 'en-EN' ?
                                             item.info_list_en?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />
                                                     {infoItem}
                                                 </li>
-                                            ))}
-                                        {langStorage === 'ru' || langStorage === 'ru-RU' &&
+                                            )) :""}
+                                        {langStorage === 'ru' || langStorage === 'ru-RU' ?
                                             item.info_list_ru?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />
                                                     {infoItem}
                                                 </li>
-                                            ))}
-                                        {langStorage === 'uz' || langStorage === 'uz-UZ' &&
+                                            )) :""}
+                                        {langStorage === 'uz' || langStorage === 'uz-UZ' ?
                                             item.info_list_uz?.map((infoItem, infoIndex) => (
                                                 <li >
                                                     <Icon.Circle />
                                                     {infoItem}
                                                 </li>
-                                            ))}
+                                            )) :""}
                                     </ul>
                                 </div>
                                 {!mediaQuery && (

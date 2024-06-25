@@ -1,6 +1,8 @@
 import sd from './imgDb/img.png';
 import logoKDX from '../assets/img/logoKDX.webp'
-import logoThomps from '../assets/img/rsz_2logo.png'
+import logoThomps1 from '../assets/img/rsz_1logo.png'
+import logoThomps2 from '../assets/img/rsz_2logo.png'
+const mediaQuery = window.matchMedia('(max-width: 750px)').matches;
 export const product = [
     {
         BronPlyonka: [
@@ -232,7 +234,7 @@ export const product = [
                 price: "2100",
                 title_img: 'https://i.ytimg.com/vi/xesmj621jYE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBXbML5cyY8amjKI7l6FEQCGeqsWw',
                 images: ['https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-03/Article_175389_860_575%20copy.jpg?itok=9t7DZ8yS'],
-                part_img:`${logoThomps}`,
+                part_img:`${ mediaQuery ? logoThomps1 : logoThomps2}`,
                 party_img_width:"335px",
                 info_uz: "bron plyonka s500 uz lkamsldakmdaldmlaksmd",
                 info_ru: "bron plyonka s500 ru lkamsldakmdaldmlaksmd",
@@ -288,7 +290,7 @@ export const product = [
                 price: "2100",
                 title_img: 'https://images6.alphacoders.com/390/390232.jpg',
                 images: ['https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-03/Article_175389_860_575%20copy.jpg?itok=9t7DZ8yS'],
-                part_img:`${logoThomps}`,
+                part_img:`${ mediaQuery ? logoThomps1 : logoThomps2}`,
                 party_img_width:"335px",
                 info_uz: "bron plyonka s500 uz lkamsldakmdaldmlaksmd",
                 info_ru: "bron plyonka s500 ru lkamsldakmdaldmlaksmd",
@@ -344,7 +346,7 @@ export const product = [
                 price: "2100",
                 title_img: 'https://4kwallpapers.com/images/walls/thumbs_2t/5557.jpg',
                 images: ['https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-03/Article_175389_860_575%20copy.jpg?itok=9t7DZ8yS'],
-                part_img:`${logoThomps}`,
+                part_img:`${ mediaQuery ? logoThomps1 : logoThomps2}`,
                 party_img_width:"335px",
                 info_uz: "bron plyonka s500 uz lkamsldakmdaldmlaksmd",
                 info_ru: "bron plyonka s500 ru lkamsldakmdaldmlaksmd",
@@ -400,7 +402,7 @@ export const product = [
                 price: "2100",
                 title_img: 'https://wallpapers.com/images/hd/black-car-4k-w132c4fj1juguqjr.jpg',
                 images: ['https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-03/Article_175389_860_575%20copy.jpg?itok=9t7DZ8yS'],
-                part_img:`${logoThomps}`,
+                part_img:`${ mediaQuery ? logoThomps1 : logoThomps2}`,
                 party_img_width:"335px",
                 info_uz: "bron plyonka s500 uz lkamsldakmdaldmlaksmd",
                 info_ru: "bron plyonka s500 ru lkamsldakmdaldmlaksmd",

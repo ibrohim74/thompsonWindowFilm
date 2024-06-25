@@ -5,6 +5,7 @@ ul {
 .footer-section {
     background: #151414;
     position: relative;
+    margin-top: 50px;
 }
 .footer-cta {
     border-bottom: 1px solid #373636;
@@ -36,7 +37,7 @@ ul {
     font-weight: 600;
     margin-bottom: 2px;
 }
-.cta-text span {
+.cta-text span a  {
     color: #757575;
     font-size: 15px;
 }

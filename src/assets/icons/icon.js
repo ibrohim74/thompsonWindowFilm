@@ -7,6 +7,11 @@ import {ReactComponent as RU} from "./ru.svg";
 import {ReactComponent as DownArrow} from "./downArrow.svg";
 import {ReactComponent as UpArrow} from "./upArrow.svg";
 import {ReactComponent as Circle} from "./circle.svg";
+import {ReactComponent as EstetikKorinish} from "./estetikKorinish.svg";
+import {ReactComponent as SunProtect} from "./sunprotection.svg";
+import {ReactComponent as UvProtect} from "./uvProtection.svg";
+import {ReactComponent as Unseen} from "./unseen.svg";
+import {ReactComponent as Hand} from "./hand.svg";
 
 export const Icon = {
     StarFull,
@@ -18,5 +23,9 @@ export const Icon = {
     DownArrow,
     UpArrow,
     Circle,
-
+    EstetikKorinish,
+    SunProtect,
+    UvProtect,
+    Unseen,
+    Hand
 }
