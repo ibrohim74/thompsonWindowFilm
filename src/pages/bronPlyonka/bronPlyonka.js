@@ -80,12 +80,12 @@ const BronPlyonka = () => {
                                                     {itemList}
                                                 </li>
                                             )) : ""}
-                                            {langStorage === 'en' || langStorage === 'en-EN' && item.listRight_en.map((itemList) => (
+                                            {langStorage === 'en' || langStorage === 'en-EN' ? item.listRight_en.map((itemList) => (
                                                 <li>
                                                     <Icon.Circle/>
                                                     {itemList}
                                                 </li>
-                                            ))}
+                                            )):""}
                                         </ul>
                                         <ul>
                                             {langStorage === 'uz' || langStorage === 'uz-UZ' ? item.listLeft_uz.map((itemList) => (

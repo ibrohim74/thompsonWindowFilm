@@ -90,6 +90,13 @@ i18n
                     contact_p:"Leave a message for more information",
                     provide_experience: 'Provide Superior Experience on Both Performance and Quality',
                     give_samples: 'Give me samples',
+                    errors:{
+                        success:"A message has been sent, we will contact you shortly",
+                        name_empty:"Your name cannot be empty",
+                        name_error:"You typed your name incorrectly",
+                        tell_error:"Your phone number is incorrect",
+                        server_error:"A system error has occurred"
+                    }
                 }
             },
             uz: {
@@ -169,8 +176,16 @@ i18n
                     contact_msg:"Xabar",
                     contact_send:"Jo'natish",
                     contact_p:"Qo'shimcha ma'lumot uchun xabar qoldiring",
+
                     provide_experience: 'Yuqori darajadagi sifat va samaradorlik bilan mukammal tajriba taqdim etadi',
                     give_samples: 'Namuna olish',
+                    errors:{
+                        success:"Xabar yuborildi, biz tez orada siz bilan bog'lanamiz",
+                        name_empty:"Ismingiz bo'sh bo'lishi mumkin emas",
+                        name_error:"Ismingizni xato yozdingiz",
+                        tell_error:"Telefon raqamingiz xato",
+                        server_error:"Tizimda xatolik yuzaga keldi"
+                    }
                 }
             },
             ru: {
@@ -253,6 +268,13 @@ i18n
                     contact_p:"Оставьте сообщение для получения дополнительной информации",
                     provide_experience: 'Обеспечивает превосходный опыт как в производительности, так и в качестве',
                     give_samples: 'Получить образцы',
+                    errors:{
+                        success:"Сообщение отправлено, мы свяжемся с вами в ближайшее время",
+                        name_empty:"Ваше имя не может быть пустым",
+                        name_error:"Вы неправильно ввели свое имя",
+                        tell_error:"Ваш номер телефона неверен",
+                        server_error:"Произошла системная ошибка"
+                    }
                 }
             },
         },
