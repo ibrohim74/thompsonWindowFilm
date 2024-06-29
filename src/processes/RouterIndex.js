@@ -9,6 +9,7 @@ const RouterIndex = () => {
 
             <BrowserRouter>
             <Routes>
+
                 {RouterData?.map(({path , Component})=>(
                     <Route path={path} element={Component}/>
                 ))}

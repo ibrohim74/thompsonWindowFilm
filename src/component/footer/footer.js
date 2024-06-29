@@ -6,8 +6,8 @@ const Footer = () => {
     const [initialState, setInitialState] = useState()
     const mediaQuery = useMediaQuery('(max-width:750px)');
     return (
-        <div>
-            <footer className="footer-section" >
+        <>
+            <footer className="footer-section"  >
                 <div className="container">
                     <div className="footer-cta pt-5 pb-5">
                         <div className="row footer_info_container">
@@ -136,7 +136,7 @@ const Footer = () => {
                 {/*    </div>*/}
                 {/*</div>*/}
             </footer>
-        </div>
+        </>
     );
 };
 

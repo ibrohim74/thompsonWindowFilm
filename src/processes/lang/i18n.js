@@ -90,6 +90,7 @@ i18n
                     contact_p:"Leave a message for more information",
                     provide_experience: 'Provide Superior Experience on Both Performance and Quality',
                     give_samples: 'Give me samples',
+                    read_more:"Read More",
                     errors:{
                         success:"A message has been sent, we will contact you shortly",
                         name_empty:"Your name cannot be empty",
@@ -141,8 +142,8 @@ i18n
                     },
                     navContent:{
                         home: 'Bosh sahifa',
-                        protection: 'Himoya plyonka',
-                        automotive: 'Avtomobil plyonka',
+                        protection: 'Himoya plyonkasi',
+                        automotive: 'Avtomobil plyonkasi',
                         technology: 'Texnologiya',
                         contact: 'Aloqa'
                     },
@@ -179,6 +180,7 @@ i18n
 
                     provide_experience: 'Yuqori darajadagi sifat va samaradorlik bilan mukammal tajriba taqdim etadi',
                     give_samples: 'Namuna olish',
+                    read_more:"Ko'proq bilish",
                     errors:{
                         success:"Xabar yuborildi, biz tez orada siz bilan bog'lanamiz",
                         name_empty:"Ismingiz bo'sh bo'lishi mumkin emas",
@@ -268,6 +270,7 @@ i18n
                     contact_p:"Оставьте сообщение для получения дополнительной информации",
                     provide_experience: 'Обеспечивает превосходный опыт как в производительности, так и в качестве',
                     give_samples: 'Получить образцы',
+                    read_more:"узнать больше",
                     errors:{
                         success:"Сообщение отправлено, мы свяжемся с вами в ближайшее время",
                         name_empty:"Ваше имя не может быть пустым",
