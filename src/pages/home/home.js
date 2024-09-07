@@ -335,7 +335,6 @@ function Home() {
 <Navbar/>
             <Canvas shadows className={'canvasHome'}>
 
-                <color attach="background" args={['#191919']} />
                 <ambientLight intensity={0.2} />
                 <spotLight position={[0, 25, 0]} angle={1.3} penumbra={1} castShadow intensity={2} shadow-bias={-0.0001} />
                 <Environment

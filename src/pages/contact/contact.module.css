@@ -127,4 +127,7 @@
     .contact_box ,.contact_title{
         margin-top: 0;
     }
+    .contact_form button{
+        margin-bottom: 100px;
+    }
 }
